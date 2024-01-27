@@ -1,15 +1,13 @@
 <script lang="ts">
-	import type { Message } from "$lib/Message";
-	import MessageDisplay from "$lib/components/MessageDisplay/MessageDisplay.svelte";
-	import ModalForm from "$lib/components/ModalForm/ModalForm.svelte";
-	
+	import type { Message } from '$lib/Message';
+	import ModalForm from '$lib/components/Form/Form.svelte';
+	import MessageDisplay from '$lib/components/MessageDisplay/MessageDisplay.svelte';
+
 	let messages: Message[] = [];
-	
+
 	function handleSubmit(author: string, text: string) {
-		if (author && text) 
-			messages = [...messages, {author, text}];
+		if (author && text) messages = [...messages, { author, text }];
 	}
-	
 </script>
 
 <div class="container my-5">
@@ -21,6 +19,3 @@
 		<MessageDisplay {message} />
 	{/each}
 </div>
-
-
-
